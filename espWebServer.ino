@@ -198,6 +198,9 @@ void updatePingSensor() {
     distance_json["distance"] = String(distance);
     serializeJson(distance_json, distance_xml);
 
+    // check if we should light up the pixel
+    (distance <= NUM_PIX) ? lightUpPixel(distance) : turnOffPixel();
+
     server.send(200, "text/html", distance_xml);
 }
 
