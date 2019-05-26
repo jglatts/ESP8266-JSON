@@ -58,6 +58,7 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_PIX, pix_pin, NEO_GRB + NEO_KHZ
 String rfid_page = rfid_page_html;
 String index_page = page;
 
+
 // globals for MFRC522, Pixel, etc...
 unsigned long data;
 bool rfid_connection_status_john = false; // flag for RFID tag
