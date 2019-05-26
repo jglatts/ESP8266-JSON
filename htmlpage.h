@@ -811,7 +811,7 @@ const char distance_page[] = R"=====(
           </div>
           <div class="time-content">
           <h1>Sensor to Node MCU Web Server</h1>
-          <h1 style="display:inline;">Distance: </h1><h1 id="dist" style="display:inline;"></h1><h1 style="display:inline;"> cm </h1>
+          <h1 style="display:inline;">Distance: </h1><h1 id="dist" style="display:inline;"></h1><h1 style="display:inline;"> inches </h1>
           </div>
             <script>
               var x = setInterval(function() {loadTime("distance.txt",updateTime)}, 1000)
@@ -918,4 +918,4 @@ const char distance_page[] = R"=====(
                   }
                 }
             </style>
-      )=====";  
+      )=====";
