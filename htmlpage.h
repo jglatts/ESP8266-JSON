@@ -812,6 +812,8 @@ const char distance_page[] = R"=====(
           <div class="time-content">
           <h1>Sensor to Node MCU Web Server</h1>
           <h1 style="display:inline;">Distance: </h1><h1 id="dist" style="display:inline;"></h1><h1 style="display:inline;"> inches </h1>
+          <br>
+          <h1 id="close-text">HARMFUL OBJECT</h1>
           </div>
             <script>
               var x = setInterval(function() {loadTime("distance.txt",updateTime)}, 1000)
@@ -829,6 +831,14 @@ const char distance_page[] = R"=====(
                       console.log(this.responseText)
                       var timeObj = JSON.parse(this.responseText)
                       document.getElementById("dist").innerHTML = timeObj.distance
+                     var x = document.getElementById("close-text")
+                     var dist = parseInt(timeObj.distance, 10)
+                        if (dist <= 12) {
+                            x.style.color = "red";
+                            x.style.display = "inline-block";
+                        } else {
+                            x.style.display = "none";
+                        }
               }
               function myFunction() {
                     var x = document.getElementById("centered_nav");
