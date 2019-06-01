@@ -21,7 +21,7 @@
 #include <SPI.h>
 #include <MFRC522.h>
 // JS-HTML file
-#include "compressed-html.h"
+#include "htmlpage.h"
 
 
 // neo-pixel pins
@@ -43,7 +43,7 @@
 #define USER_UNKNOWN "User Unknown"
 
 
-// network credentials
+// network credentials, sign in with yours
 const char* ssid = "";
 const char* password = "";
 
@@ -200,13 +200,13 @@ void updatePingSensor() {
 
     Serial.println(distance);
     distance_json["distance"] = String(distance);
-    
+
     // debug
     if (dist_index < 6) {
         all_dists[dist_index] = distance;
         ++dist_index;
     }
-    
+
     serializeJson(distance_json, distance_xml);
 
     // check if we should light up the pixel
