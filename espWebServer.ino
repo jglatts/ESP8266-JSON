@@ -12,8 +12,7 @@
     #include <ArduinoJson.h>
     #include <SPI.h>
     #include <MFRC522.h>
-    // JS-HTML file
-   // #include "htmlpage.h" this file is slow to load -- use compressed-html.h instead
+   // #include "htmlpage.h" this file is slow to load in the browser -- use compressed-html.h instead
     #include "compressed-html.h"    
 
 
