@@ -22,7 +22,7 @@
 #include <SPI.h>
 #include <MFRC522.h>
 // JS-HTML file
-#include "htmlpage.h"
+#include "compressed-html.h"
 
 
 // neo-pixel pins
