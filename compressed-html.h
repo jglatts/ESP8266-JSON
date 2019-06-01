@@ -2,6 +2,7 @@
 /*
  * HTML Header file for nodemcu ajax sketch
  * This file has compressed JS and CSS which it makes it quite difficult to read
+ * However, the browser can load these pages very quickly which makes it the efficient choice
  * The non-compressed html file is 'not-compressed-html.h', which will NOT load pages in the browser 
  *  
  * Author: John Glatts
