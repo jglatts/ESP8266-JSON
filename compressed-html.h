@@ -64,6 +64,8 @@ const char page[] = R"=====(
                   body{background-color:#f5f5f5;font-family:Roboto,sans-serif}.name{size:4em;text-align:center}a{text-decoration:none}.content{text-align:center}#all-buttons{text-align:center}#user-info{margin-top:2em;text-align:center}.content-buttons{margin-top:1em;margin-right:14px;padding:20px;background-color:#dcdcdc;font-size:2em;text-align:center}.rc_nav{overflow:hidden;background-color:#363841;text-align:center;z-index:6}.rc_nav a{display:inline-block;margin-right:-4px;color:#fff;padding:22px 22px;text-decoration:none;font-family:Poppins;font-size:18px;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;z-index:9}.rc_nav a:hover{background-color:#575b69;color:#bdfe0e2}.rc_nav .icon{display:none}.rc_content{text-align:center;padding-left:14px;font-family:Poppins;margin-top:100px;color:#8e909b}@media screen and (max-width:820px){.rc_nav a{display:none}.rc_nav a.icon{float:right;display:block;width:60px}}@media screen and (max-width:820px){.rc_nav.responsive{position:relative;top:73px}.rc_nav.responsive .icon{position:fixed;right:0;top:0}.rc_nav.responsive a{float:none;display:block;text-align:center}}
                   </style>
           )=====";
+                    
+                    
 // elapsed time page
 const char time_page[] = R"=====(
               <head>
@@ -92,6 +94,8 @@ const char time_page[] = R"=====(
                 body{background-color:#f5f5f5;font-family:Roboto,sans-serif}.name{size:4em;text-align:center}.time-content{text-align:center}.content{text-align:center}.rc_nav{overflow:hidden;background-color:#363841;text-align:center;z-index:6}.rc_nav a{display:inline-block;margin-right:-4px;color:#fff;padding:22px 22px;text-decoration:none;font-family:Poppins;font-size:18px;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;z-index:9}.rc_nav a:hover{background-color:#575b69;color:#bdfe0e2}.rc_nav .icon{display:none}.rc_content{text-align:center;padding-left:14px;font-family:Poppins;margin-top:100px;color:#8e909b}@media screen and (max-width:820px){.rc_nav a{display:none}.rc_nav a.icon{float:right;display:block;width:60px}}@media screen and (max-width:820px){.rc_nav.responsive{position:relative;top:73px}.rc_nav.responsive .icon{position:fixed;right:0;top:0}.rc_nav.responsive a{float:none;display:block;text-align:center}}
                 </style>
           )=====";
+                  
+                  
 // stats page
 // loads JSON in intervals, get the fn() to go the page just once
 const char board_stats_page[] = /* R"=====(
@@ -237,6 +241,8 @@ const char board_stats_page[] = /* R"=====(
                 </style>
           )=====" */
         "";
+
+
 /* About Page
  *  - The JS works, only loads the JSON one time
  *  - Change some other pages to this JS style
@@ -381,6 +387,8 @@ const char board_about_page[] = /* R"=====(
                 </style>
           )=====" */
         "";
+
+
 /*
  * RFID Module HTML/JS page
  *      - Displays current user and cards that are checked
@@ -418,6 +426,8 @@ const char rfid_page_html[] = R"=====(
                   body{background-color:#f5f5f5;font-family:Roboto,sans-serif}#user-title{display:inline-block;text-align:center}#user{margin-top:1em;display:inline-block;text-align:center}.name{size:4em;text-align:center}a{text-decoration:none}.content{text-align:center}#btn-content{padding:15px;height:2em}#all-buttons{text-align:center}#rfid-wrapper{text-align:center}.content-buttons{margin-top:1em;margin-right:14px;padding:20px;background-color:#dcdcdc;font-size:2em;text-align:center}.rc_nav{overflow:hidden;background-color:#363841;text-align:center;z-index:6}.rc_nav a{display:inline-block;margin-right:-4px;color:#fff;padding:22px 22px;text-decoration:none;font-family:Poppins;font-size:18px;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;z-index:9}.rc_nav a:hover{background-color:#575b69;color:#bdfe0e2}.rc_nav .icon{display:none}.rc_content{text-align:center;padding-left:14px;font-family:Poppins;margin-top:100px;color:#8e909b}@media screen and (max-width:820px){.rc_nav a{display:none}.rc_nav a.icon{float:right;display:block;width:60px}}@media screen and (max-width:820px){.rc_nav.responsive{position:relative;top:73px}.rc_nav.responsive .icon{position:fixed;right:0;top:0}.rc_nav.responsive a{float:none;display:block;text-align:center}}
                   </style>
           )=====";
+                    
+                    
 // distance page
 const char distance_page[] = R"=====(
                <script>
