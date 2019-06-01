@@ -1,17 +1,9 @@
     /*
     *
-    * WORKING TEST AJAX WITH JSON NODEMCU sketch
+    * Webserver running on an Nodemcu that displays info using AJAX
     * Author: John Glatts
     * Date: 4/17/19
     *
-    *   REFACTOR ME! Currently getting a stack overflow
-    *
-    *    ToDo:
-     *    - Add a defense mechanism to 'private' lins, like checking the bool's, so unauthorized users can't access it
-     *    - Clean up the new feature to have multiple cards
-     *    - Include a new and improved .h file
-     *      - A header file with .cpp function
-     *      - Make a LIBRARY! - Did dat
     */
     #include <Adafruit_NeoPixel.h>
     #include <ESP8266WiFi.h>
@@ -21,7 +13,8 @@
     #include <SPI.h>
     #include <MFRC522.h>
     // JS-HTML file
-    #include "htmlpage.h"
+   // #include "htmlpage.h" this file is slow to load -- use compressed-html.h instead
+    #include "compressed-html.h"    
 
 
     // neo-pixel pins
