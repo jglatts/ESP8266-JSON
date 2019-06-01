@@ -1,6 +1,9 @@
 
 /*
  * HTML Header file for nodemcu ajax sketch
+ * This file has compressed JS and CSS which it makes it quite difficult to read
+ * The non-compressed html file is 'not-compressed-html.h', which will NOT load pages in the browser 
+ *  
  * Author: John Glatts
  * Date: 4/8/19
  * Use stats feature from ESP-DASH to display better stats
