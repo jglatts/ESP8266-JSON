@@ -1,3 +1,7 @@
+/* <button onclick="updateAllDistances('ResetDistances.txt', resetDists)">Erase All Distances</button>*/
+
+
+
 /*
  * HTML Header file for nodemcu ajax sketch
  * This file has compressed JS and CSS which it makes it quite difficult to read
@@ -417,7 +421,7 @@ const char rfid_page_html[] = R"=====(
 // distance page
 const char distance_page[] = R"=====(
                <script>
-                let indx=0,x=setInterval(function(){loadTime("distance.txt",updateTime)},1e3);function loadTime(e,t){let n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTime(){console.log(this.responseText),++indx;let e=JSON.parse(this.responseText);document.getElementById("dist").innerHTML=e.distance;let t=document.getElementById("close-text");parseInt(e.distance,10)<=12?(t.style.color="red",t.style.display="inline-block"):t.style.display="none";let n=document.createElement("h3"),s=document.createTextNode("Distance #"+indx+" = "+e.distance+" inches");n.appendChild(s),document.getElementById("all-dists-div").appendChild(n)}function showAllDistances(){let e=document.getElementById("all-dists-div");"none"===e.style.display?e.style.display="block":e.style.display="none"}function updateAllDistances(e,t){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTxtAllDists(){console.log(this.responseText);let e=JSON.parse(this.responseText);document.getElementById("dis1").innerHTML=e.dis_one,document.getElementById("dis2").innerHTML=e.dis_two,document.getElementById("dis3").innerHTML=e.dis_three,document.getElementById("dis4").innerHTML=e.dis_four,document.getElementById("dis5").innerHTML=e.dis_five,document.getElementById("dis6").innerHTML=e.dis_six}function myFunction(){var e=document.getElementById("centered_nav");"rc_nav"===e.className?e.className+=" responsive":e.className="rc_nav"}
+                let indx=0,x=setInterval(function(){loadTime("distance.txt",updateTime)},1e3);function loadTime(e,t){let n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTime(){console.log(this.responseText),++indx;let e=JSON.parse(this.responseText);document.getElementById("dist").innerHTML=e.distance,document.getElementById("dist-count").innerHTML=indx;let t=document.getElementById("close-text");parseInt(e.distance,10)<=12?(t.style.color="red",t.style.display="inline-block"):t.style.display="none";let n=document.createElement("h3"),s=document.createTextNode("Distance #"+indx+" = "+e.distance+" inches");n.appendChild(s),document.getElementById("all-dists-div").appendChild(n)}function showAllDistances(){let e=document.getElementById("all-dists-div");"none"===e.style.display?e.style.display="block":e.style.display="none"}function updateAllDistances(e,t){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function myFunction(){var e=document.getElementById("centered_nav");"rc_nav"===e.className?e.className+=" responsive":e.className="rc_nav"}
               </script>
               <head>
                <meta charset="UTF-8">
@@ -441,6 +445,8 @@ const char distance_page[] = R"=====(
               <h1 id="close-text">HARMFUL OBJECT</h1>
               <br>
               <div id="all-dists-div" style="display:none;">
+              <h1 style="display:inline;">Number of Counts: </h1><h1 id="dist-count" style="display:inline;"></h1>
+              <br>
               </div>
               </div>
               <style>
