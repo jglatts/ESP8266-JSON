@@ -1,12 +1,3 @@
-                  /* 
-                  * This is the un-compressed JS script that is found in the Distance page of 'compressed-html.h'
-                  * Author: John Glatts
-                  * Date: 6/2/19
-                  *
-                  *
-                  */
-
-
                   let indx = 0;  // used to keep track of all distances
 
                   /* Function to grab and update the distance every second */
@@ -37,13 +28,11 @@
                                 x.style.display = "none";
                             }
                          // add the new distance to the'all-dists-div' div tag
-                         for (let i = 0; i < indx; ++i) {
-                                  let para = document.createElement("h3");
-                                  let node = document.createTextNode("Distance #" + indx + " = " + timeObj.distance + " inches");
-                                  para.appendChild(node);
-                                  let element = document.getElementById("all-dists-div");
-                                  element.appendChild(para);
-                         }
+                         let para = document.createElement("h3");
+                         let node = document.createTextNode("Distance #" + indx + " = " + timeObj.distance + " inches");
+                         para.appendChild(node);
+                         let element = document.getElementById("all-dists-div");
+                         element.appendChild(para);
                   }
 
 
@@ -66,22 +55,6 @@
                      };
                         xhttp_reset.open("GET", url_reset, true);
                         xhttp_reset.send()
-                  }
-
-
-                  function updateTxtAllDists(){
-                          // working -- but update so a nice for-loop will work
-                          console.log(this.responseText);
-                          let allDistObj = JSON.parse(this.responseText);
-
-                          // update this to a nice for loop
-                          // been having some trouble
-                          document.getElementById("dis1").innerHTML = allDistObj.dis_one;
-                          document.getElementById("dis2").innerHTML = allDistObj.dis_two;
-                          document.getElementById("dis3").innerHTML = allDistObj.dis_three;
-                          document.getElementById("dis4").innerHTML = allDistObj.dis_four;
-                          document.getElementById("dis5").innerHTML = allDistObj.dis_five;
-                          document.getElementById("dis6").innerHTML = allDistObj.dis_six
                   }
 
 
