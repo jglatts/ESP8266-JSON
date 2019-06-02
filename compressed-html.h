@@ -1,3 +1,7 @@
+/* <button onclick="updateAllDistances('ResetDistances.txt', resetDists)">Erase All Distances</button>*/
+
+
+
 /*
  * HTML Header file for nodemcu ajax sketch
  * This file has compressed JS and CSS which it makes it quite difficult to read
@@ -60,8 +64,6 @@ const char page[] = R"=====(
                   body{background-color:#f5f5f5;font-family:Roboto,sans-serif}.name{size:4em;text-align:center}a{text-decoration:none}.content{text-align:center}#all-buttons{text-align:center}#user-info{margin-top:2em;text-align:center}.content-buttons{margin-top:1em;margin-right:14px;padding:20px;background-color:#dcdcdc;font-size:2em;text-align:center}.rc_nav{overflow:hidden;background-color:#363841;text-align:center;z-index:6}.rc_nav a{display:inline-block;margin-right:-4px;color:#fff;padding:22px 22px;text-decoration:none;font-family:Poppins;font-size:18px;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;z-index:9}.rc_nav a:hover{background-color:#575b69;color:#bdfe0e2}.rc_nav .icon{display:none}.rc_content{text-align:center;padding-left:14px;font-family:Poppins;margin-top:100px;color:#8e909b}@media screen and (max-width:820px){.rc_nav a{display:none}.rc_nav a.icon{float:right;display:block;width:60px}}@media screen and (max-width:820px){.rc_nav.responsive{position:relative;top:73px}.rc_nav.responsive .icon{position:fixed;right:0;top:0}.rc_nav.responsive a{float:none;display:block;text-align:center}}
                   </style>
           )=====";
-                    
-                    
 // elapsed time page
 const char time_page[] = R"=====(
               <head>
@@ -90,9 +92,6 @@ const char time_page[] = R"=====(
                 body{background-color:#f5f5f5;font-family:Roboto,sans-serif}.name{size:4em;text-align:center}.time-content{text-align:center}.content{text-align:center}.rc_nav{overflow:hidden;background-color:#363841;text-align:center;z-index:6}.rc_nav a{display:inline-block;margin-right:-4px;color:#fff;padding:22px 22px;text-decoration:none;font-family:Poppins;font-size:18px;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;z-index:9}.rc_nav a:hover{background-color:#575b69;color:#bdfe0e2}.rc_nav .icon{display:none}.rc_content{text-align:center;padding-left:14px;font-family:Poppins;margin-top:100px;color:#8e909b}@media screen and (max-width:820px){.rc_nav a{display:none}.rc_nav a.icon{float:right;display:block;width:60px}}@media screen and (max-width:820px){.rc_nav.responsive{position:relative;top:73px}.rc_nav.responsive .icon{position:fixed;right:0;top:0}.rc_nav.responsive a{float:none;display:block;text-align:center}}
                 </style>
           )=====";
-   
-                  
-// Not used right now, needs to be compressed                  
 // stats page
 // loads JSON in intervals, get the fn() to go the page just once
 const char board_stats_page[] = /* R"=====(
@@ -238,10 +237,7 @@ const char board_stats_page[] = /* R"=====(
                 </style>
           )=====" */
         "";
-
-
 /* About Page
- *  - Not used right now, needs to be compressed
  *  - The JS works, only loads the JSON one time
  *  - Change some other pages to this JS style
  *
@@ -385,8 +381,6 @@ const char board_about_page[] = /* R"=====(
                 </style>
           )=====" */
         "";
-
-
 /*
  * RFID Module HTML/JS page
  *      - Displays current user and cards that are checked
@@ -424,12 +418,10 @@ const char rfid_page_html[] = R"=====(
                   body{background-color:#f5f5f5;font-family:Roboto,sans-serif}#user-title{display:inline-block;text-align:center}#user{margin-top:1em;display:inline-block;text-align:center}.name{size:4em;text-align:center}a{text-decoration:none}.content{text-align:center}#btn-content{padding:15px;height:2em}#all-buttons{text-align:center}#rfid-wrapper{text-align:center}.content-buttons{margin-top:1em;margin-right:14px;padding:20px;background-color:#dcdcdc;font-size:2em;text-align:center}.rc_nav{overflow:hidden;background-color:#363841;text-align:center;z-index:6}.rc_nav a{display:inline-block;margin-right:-4px;color:#fff;padding:22px 22px;text-decoration:none;font-family:Poppins;font-size:18px;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;z-index:9}.rc_nav a:hover{background-color:#575b69;color:#bdfe0e2}.rc_nav .icon{display:none}.rc_content{text-align:center;padding-left:14px;font-family:Poppins;margin-top:100px;color:#8e909b}@media screen and (max-width:820px){.rc_nav a{display:none}.rc_nav a.icon{float:right;display:block;width:60px}}@media screen and (max-width:820px){.rc_nav.responsive{position:relative;top:73px}.rc_nav.responsive .icon{position:fixed;right:0;top:0}.rc_nav.responsive a{float:none;display:block;text-align:center}}
                   </style>
           )=====";
-                    
-                    
 // distance page
 const char distance_page[] = R"=====(
                <script>
-               let indx=0,x=setInterval(function(){loadTime("distance.txt",updateTime)},1e3);function loadTime(e,t){let n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTime(){console.log(this.responseText),++indx;let e=JSON.parse(this.responseText);document.getElementById("dist").innerHTML=e.distance;let t=document.getElementById("close-text");parseInt(e.distance,10)<=12?(t.style.color="red",t.style.display="inline-block"):t.style.display="none";for(let t=0;t<indx;++t){let t=document.createElement("h2"),n=document.createTextNode(e.distance);t.appendChild(n),document.getElementById("all-dists-div").appendChild(t)}}function showAllDistances(){let e=document.getElementById("all-dists-div");"none"===e.style.display?e.style.display="block":e.style.display="none"}function updateAllDistances(e,t){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTxtAllDists(){console.log(this.responseText);let e=JSON.parse(this.responseText);document.getElementById("dis1").innerHTML=e.dis_one,document.getElementById("dis2").innerHTML=e.dis_two,document.getElementById("dis3").innerHTML=e.dis_three,document.getElementById("dis4").innerHTML=e.dis_four,document.getElementById("dis5").innerHTML=e.dis_five,document.getElementById("dis6").innerHTML=e.dis_six}function myFunction(){var e=document.getElementById("centered_nav");"rc_nav"===e.className?e.className+=" responsive":e.className="rc_nav"}
+                let indx=0,x=setInterval(function(){loadTime("distance.txt",updateTime)},1e3);function loadTime(e,t){let n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTime(){console.log(this.responseText),++indx;let e=JSON.parse(this.responseText);document.getElementById("dist").innerHTML=e.distance;let t=document.getElementById("close-text");parseInt(e.distance,10)<=12?(t.style.color="red",t.style.display="inline-block"):t.style.display="none";for(let t=0;t<indx;++t){let t=document.createElement("h3"),n=document.createTextNode("Distance #"+indx+" = "+e.distance+" inches");t.appendChild(n),document.getElementById("all-dists-div").appendChild(t)}}function showAllDistances(){let e=document.getElementById("all-dists-div");"none"===e.style.display?e.style.display="block":e.style.display="none"}function updateAllDistances(e,t){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&t.apply(n)},n.open("GET",e,!0),n.send()}function updateTxtAllDists(){console.log(this.responseText);let e=JSON.parse(this.responseText);document.getElementById("dis1").innerHTML=e.dis_one,document.getElementById("dis2").innerHTML=e.dis_two,document.getElementById("dis3").innerHTML=e.dis_three,document.getElementById("dis4").innerHTML=e.dis_four,document.getElementById("dis5").innerHTML=e.dis_five,document.getElementById("dis6").innerHTML=e.dis_six}function myFunction(){var e=document.getElementById("centered_nav");"rc_nav"===e.className?e.className+=" responsive":e.className="rc_nav"}
               </script>
               <head>
                <meta charset="UTF-8">
