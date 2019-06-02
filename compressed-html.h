@@ -1,7 +1,3 @@
-/* <button onclick="updateAllDistances('ResetDistances.txt', resetDists)">Erase All Distances</button>*/
-
-
-
 /*
  * HTML Header file for nodemcu ajax sketch
  * This file has compressed JS and CSS which it makes it quite difficult to read
