@@ -30,7 +30,7 @@
                          // add the new distance to the'all-dists-div' div tag
                          for (let i = 0; i < indx; ++i) {
                                   let para = document.createElement("h3");
-                                  let node = document.createTextNode(timeObj.distance);
+                                  let node = document.createTextNode("Distance #" + indx + " = " + timeObj.distance + " inches");
                                   para.appendChild(node);
                                   let element = document.getElementById("all-dists-div");
                                   element.appendChild(para);
