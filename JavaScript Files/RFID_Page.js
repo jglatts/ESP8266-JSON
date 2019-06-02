@@ -19,6 +19,7 @@
                          ++indx;   // increase on each new distance received
                          let timeObj = JSON.parse(this.responseText);
                          document.getElementById("dist").innerHTML = timeObj.distance;
+                         document.getElementById("dist-count").innerHTML = indx;
                          let x = document.getElementById("close-text");
                          let dist = parseInt(timeObj.distance, 10);
                             if (dist <= 12) {
