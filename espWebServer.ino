@@ -22,7 +22,7 @@
 #include <SPI.h>
 #include <MFRC522.h>
 // JS-HTML file
-#include "compressed-html.h"
+#include "htmlpage.h"
 
 
 // neo-pixel pins
@@ -45,8 +45,8 @@
 
 
 // network credentials, sign in with yours
-const char* ssid = "";
-const char* password = "";
+const char* ssid = "your-wifi";
+const char* password = "your-password";
 
 
 // set up instances
