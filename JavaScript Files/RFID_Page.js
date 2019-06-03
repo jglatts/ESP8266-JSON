@@ -1,4 +1,4 @@
- 	                /*
+ 	           /*
                   * This is the un-compressed Javascript found in the Distance page of 'compressed-html.h'
                   * Author: John Glatts
                   * Date: 6/2/19
