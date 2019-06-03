@@ -1,3 +1,10 @@
+ 	                /*
+                  * This is the un-compressed Javascript found in the Distance page of 'compressed-html.h'
+                  * Author: John Glatts
+                  * Date: 6/2/19
+                  *
+                  *
+                  */
                   let indx = 0;  // used to keep track of all distances
 
                   /* Function to grab and update the distance every second */
