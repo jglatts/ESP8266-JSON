@@ -4,7 +4,7 @@ Another webserver running on a Nodemcu, this time with the use of JSON
 
 
 # Description
-## Overview: Using JSON, this webserver updates information about a few differnet things. 
+**Overview**: Using JSON, this webserver updates information about a few differnet things. 
 
 
 **Board**: Nodemcu ESP8266
