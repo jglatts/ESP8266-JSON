@@ -4,13 +4,13 @@ Another webserver running on a Nodemcu, this time with the use of JSON
 
 
 # Description
-Overview: Using JSON, this webserver updates information about a few differnet things. 
+[h2]Overview: Using JSON, this webserver updates information about a few differnet things. 
 
 
-Board: Nodemcu ESP8266
+[h2]Board: Nodemcu ESP8266
 
 
-Extra Peripherals: MFRC522 RFID Reader, HC-SR04 distance sensor, and Adafruit Neopixel (all optional)
+[h2]Extra Peripherals: MFRC522 RFID Reader, HC-SR04 distance sensor, and Adafruit Neopixel (all optional)
 
 
 
