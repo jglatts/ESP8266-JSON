@@ -45,8 +45,8 @@
 
 
 // network credentials, sign in with yours
-const char* ssid = "your-wifi";
-const char* password = "your-password";
+const char* ssid = "HOME-89C3-2.4";
+const char* password = "being5653dimmed";
 
 
 // set up instances
@@ -63,11 +63,10 @@ String distance_str = distance_page;
 
 // globals for MFRC522, Pixel, etc...
 unsigned long data;
-bool rfid_connection_status_john = false; // flag for RFID tag
-bool rfid_connection_status_george = false; // flag for RFID tag
+bool rfid_connection_status_john, rfid_connection_status_george ; // flaga for RFID tag
 int dist_index, number_of_checkins;
 int all_dists[500];
-
+String current_user, current_id = "";
 
 /* Set it up homie */
 void setup(void){
@@ -128,7 +127,6 @@ void serverOnEveryThing() {
 }
 
 
-
 /* Record the time, in millis, to be used later on
  * Uses JSON
  * */
@@ -136,27 +134,38 @@ void updateSysTime() {
     StaticJsonDocument<500> sys_uptime_json;
     String sys_uptime, time_data;
 
-    // test and see if getting rid of String time_data will work
-    // if it does, ykwtfgo
+    // snag the time
     data = millis();
 
     sys_uptime_json["total_system_time"] = time_data;
-    // clean this up, maybe add an extra flag
-    if (rfid_connection_status_john) {
-        sys_uptime_json["current_user"] = USER_NAME_JG;
-        sys_uptime_json["current_id"] = RFID_CARD_UID_JG;
-    }
-    else if (rfid_connection_status_george) {
-        sys_uptime_json["current_user"] = USER_NAME_GG;
-        sys_uptime_json["current_id"] = RFID_CARD_UID_GG;
-    }
-    else {
-        sys_uptime_json["current_user"] = USER_UNKNOWN;
-        sys_uptime_json["current_id"] = "No Current User";
-    }
+    sys_uptime_json["current_user"] = getCurrentUser();
+    sys_uptime_json["current_id"] = getCurrentID();
+    sys_uptime_json["number_check_ins"] = String(number_of_checkins);
     sys_uptime_json["number_check_ins"] = String(number_of_checkins);
     serializeJson(sys_uptime_json, sys_uptime);
     server.send(200, "application/json", sys_uptime);
+}
+
+
+/* Return the current user */
+String getCurrentUser() {
+    if (rfid_connection_status_john || rfid_connection_status_george) {
+        return current_user;
+    }
+    else {
+        return "No Current User";
+    }
+}
+
+
+/* Return the current ID */
+String getCurrentID() {
+    if (rfid_connection_status_john || rfid_connection_status_george) {
+        return current_id;
+    }
+    else {
+        return "No Current User";
+    }
 }
 
 
@@ -408,16 +417,20 @@ void rfidUpdate() {
             content.toUpperCase();
             if (content.substring(1) == RFID_CARD_UID_JG) {
                 // add this to helper
+                current_user = RFID_CARD_UID_JG;
                 rfid_connection_status_john = true;
                 checkUserIn();
             }
             else if (content.substring(1) == RFID_CARD_UID_GG) {
+                current_user = RFID_CARD_UID_GG;
                 rfid_connection_status_george = true;
                 checkUserIn();
             }
             else   {
+                current_user = USER_UNKNOWN;
                 displayCardInfo("Access Denied", content.substring(1));
             }
+            current_id = content.substring(1);
             // Make sure Pixel is off
             turnOffPixel();
         }
