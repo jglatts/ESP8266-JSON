@@ -45,8 +45,8 @@
 
 
 // network credentials, sign in with yours
-const char* ssid = "your-network-name";
-const char* password = "your-network-password";
+const char* ssid = "your-wifi";
+const char* password = "your-pw";
 
 
 // set up instances
@@ -68,6 +68,7 @@ int dist_index, number_of_checkins;
 int all_dists[500];
 String current_user= "";
 String current_id = "";
+
 
 /* Set it up homie */
 void setup(void){
@@ -418,12 +419,12 @@ void rfidUpdate() {
             content.toUpperCase();
             if (content.substring(1) == RFID_CARD_UID_JG) {
                 // add this to helper
-                current_user = RFID_CARD_UID_JG;
+                current_user = USER_NAME_JG;
                 rfid_connection_status_john = true;
                 checkUserIn();
             }
             else if (content.substring(1) == RFID_CARD_UID_GG) {
-                current_user = RFID_CARD_UID_GG;
+                current_user = USER_NAME_GG;
                 rfid_connection_status_george = true;
                 checkUserIn();
             }
