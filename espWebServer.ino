@@ -45,8 +45,8 @@
 
 
 // network credentials, sign in with yours
-const char* ssid = "your-wifi";
-const char* password = "your-pw";
+const char* ssid = "your-network-name";
+const char* password = "your-network-password";
 
 
 // set up instances
@@ -66,7 +66,8 @@ unsigned long data;
 bool rfid_connection_status_john, rfid_connection_status_george ; // flaga for RFID tag
 int dist_index, number_of_checkins;
 int all_dists[500];
-String current_user, current_id = "";
+String current_user= "";
+String current_id = "";
 
 /* Set it up homie */
 void setup(void){
