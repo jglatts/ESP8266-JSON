@@ -45,8 +45,8 @@
 
 
 // network credentials, sign in with yours
-const char* ssid = "HOME-89C3-2.4";
-const char* password = "being5653dimmed";
+const char* ssid = "your-wifi";
+const char* password = "your-pw";
 
 
 // set up instances
