@@ -1,19 +1,3 @@
-/*
-*
-* WORKING AJAX WITH JSON NODEMCU sketch
-* Author: John Glatts
-* Date: 4/17/19
-*
-*   REFACTOR ME! Currently getting a stack overflow -- not anymore, but still needs some TLC
-*       - one solution for faster loads time and no more S.O. was compressing the JS/CSS strings
-*
-*    ToDo:
- *    - Add a defense mechanism to 'private' links, like checking the bool's, so unauthorized users can't access it
- *    - Clean up the new feature to have multiple cards
- *    - Include a new and improved .h file
- *      - A header file with .cpp function
- *      - Make a LIBRARY! - Did dat
-*/
 #include <Adafruit_NeoPixel.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
